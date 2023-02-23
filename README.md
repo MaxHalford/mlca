@@ -1,0 +1,2 @@
+# mlca
+ Minimalist LCA software
