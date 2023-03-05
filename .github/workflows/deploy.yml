@@ -1,14 +1,25 @@
-steps:
-  - name: Set up Node.js ⚙️
-    uses: actions/setup-node@v2
-    with:
-      node-version: "18.x"
+name: Deploy
 
-  - name: Install dependencies 📦
-    run: yarn install --frozen-lockfile
+on:
+  push:
+    branches:
+      - main
 
-  - name: Generate 🧬
-    run: yarn run generate
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js ⚙️
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.x"
 
-  - name: Deploy 🚀
-    run: yarn run deploy
+      - name: Install dependencies 📦
+        run: yarn install --frozen-lockfile
+
+      - name: Generate 🧬
+        run: yarn run generate
+
+      - name: Deploy 🚀
+        run: yarn run deploy
