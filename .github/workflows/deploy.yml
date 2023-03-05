@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Set up Node.js ⚙️
         uses: actions/setup-node@v2
-        with:
-          node-version: "18.x"
 
       - name: Checkout repository ⬇️
         uses: actions/checkout@v3
@@ -27,6 +25,6 @@ jobs:
       - name: Deploy 🚀
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          yarn run deploy -- -u "github-actions-bot <support+actions@github.com>"
+          yarn run deploy -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
