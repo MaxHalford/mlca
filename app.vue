@@ -2,7 +2,12 @@
   <div>
     <NuxtLayout>
       <div style="display: flex; flex-direction: column">
-        <h1>{{ route.path }}</h1>
+        <nav>
+          <ul>
+            <li><NuxtLink to="/">Home</NuxtLink></li>
+            <li><NuxtLink to="/new">New</NuxtLink></li>
+          </ul>
+        </nav>
         <NuxtPage />
       </div>
     </NuxtLayout>
@@ -11,14 +16,10 @@
 
 <script setup>
 const route = useRoute()
-
-let greeter = new Element("world");
-
-console.log(greeter.inputs)
-console.log(greeter.take(10).amount); // 100
 </script>
 
 <style>
+
 body {
   margin:5%auto;
   background: #faf4ed;
@@ -33,13 +34,16 @@ code{
 }
 
 a{
-  border-bottom:1px solid #d7827e;
   color:#d7827e;
   text-decoration:none
 }
 
 a:hover{
   border-bottom:0
+}
+
+a.router-link-active {
+  font-weight: bold;
 }
 
 b,body,strong{

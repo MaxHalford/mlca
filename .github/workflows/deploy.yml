@@ -1,0 +1,14 @@
+steps:
+  - name: Set up Node.js ⚙️
+    uses: actions/setup-node@v2
+    with:
+      node-version: "18.x"
+
+  - name: Install dependencies 📦
+    run: yarn install --frozen-lockfile
+
+  - name: Generate 🧬
+    run: yarn run generate
+
+  - name: Deploy 🚀
+    run: yarn run deploy
