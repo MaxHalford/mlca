@@ -14,10 +14,6 @@
   </div>
 </template>
 
-<script setup>
-const route = useRoute()
-</script>
-
 <style>
 
 body {
@@ -36,10 +32,6 @@ code{
 a{
   color:#d7827e;
   text-decoration:none
-}
-
-a:hover{
-  border-bottom:0
 }
 
 a.router-link-active {
@@ -70,6 +62,12 @@ a{
 
 b,body,strong{
   color:#e0def4
+}
+
+input {
+  background: #e0def4;
+  color: #232136;
+  border: 0;
 }
 
 h1,h2,h3,h4,h5,h6{color:#c4a7e7}

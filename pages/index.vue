@@ -1,7 +1,11 @@
 <template>
   <div>
     <button @click="clear">Clear</button>
-    <p>Current color: {{ useElements() }}</p>
+
+      <div v-for="element in useElements().value">
+        <p>{{ element.name }}</p>
+        <p>{{ element.unit }}</p>
+      </div>
   </div>
 </template>
 
